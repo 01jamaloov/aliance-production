@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="mark">
     <transition appear @before-enter="beforeEnterOne" @enter="enterOne">
       <div class="hero__layer">
         <transition
@@ -11,38 +11,36 @@
         </transition>
       </div>
     </transition>
-    <AppHero />
-    <AppWork />
-    <AppProduct />
+    <div class="page__section">
+      <div class="container">
+        <div class="section">
+          <img src="../assets/img/line.svg" alt="" />
+          <h1 class="section__title">
+            {{ $store.state.sectionTitle.title3 }}
+          </h1>
+          <p class="section__link">
+            <router-link class="section__link--item" :to="{ name: 'home' }">
+              {{ $store.state.pageLinks.title1 }}</router-link
+            >
+            — Собственные торговые марки
+          </p>
+        </div>
+      </div>
+    </div>
     <AppMark />
-    <AppClient />
-    <AppMore />
-    <AppBlog />
     <AppContact />
   </div>
 </template>
 
 <script>
-import AppHero from '@/components/AppHero.vue'
-import AppWork from '@/components/AppWork.vue'
-import AppProduct from '@/components/AppProduct.vue'
 import AppMark from '@/components/AppMark.vue'
-import AppClient from '@/components/AppClient.vue'
-import AppMore from '@/components/AppMore.vue'
-import AppBlog from '@/components/AppBlog.vue'
 import AppContact from '@/components/AppContact.vue'
 import gsap from 'gsap'
 
 export default {
-  name: 'HomeView',
+  name: 'MarkView',
   components: {
-    AppHero,
-    AppWork,
-    AppProduct,
     AppMark,
-    AppClient,
-    AppMore,
-    AppBlog,
     AppContact
   },
   methods: {
@@ -71,3 +69,5 @@ export default {
   }
 }
 </script>
+
+<style></style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="blogs">
     <transition appear @before-enter="beforeEnterOne" @enter="enterOne">
       <div class="hero__layer">
         <transition
@@ -16,46 +16,37 @@
         <div class="section">
           <img src="../assets/img/line.svg" alt="" />
           <h1 class="section__title">
-            {{ $store.state.sectionTitle.title8 }}
+            {{ $store.state.sectionTitle.title22 }}
           </h1>
           <p class="section__link">
             <router-link class="section__link--item" :to="{ name: 'home' }">
               {{ $store.state.pageLinks.title1 }}</router-link
             >
-            — О компании
+            —
+            <router-link class="section__link--item" :to="{ name: 'blog' }">
+              {{ $store.state.sectionTitle.title21 }}</router-link
+            >
+            — Современная методология разработки одухотворила всех причастных
           </p>
         </div>
       </div>
     </div>
-    <AboutExpert />
-    <AppPluses />
-    <AboutProduct />
-    <AppClient />
-    <AboutBlog />
-    <AppMore />
+    <AppMethod />
+    <AppBlog />
     <AppContact />
   </div>
 </template>
 
 <script>
-import AboutExpert from '@/components/AboutExpert.vue'
-import AppPluses from '@/components/AppPluses.vue'
-import AboutProduct from '@/components/AboutProduct.vue'
-import AppClient from '@/components/AppClient.vue'
-import AboutBlog from '@/components/AboutBlog.vue'
-import AppMore from '@/components/AppMore.vue'
+import AppMethod from '@/components/AppMethod.vue'
+import AppBlog from '@/components/AppBlog.vue'
 import AppContact from '@/components/AppContact.vue'
 import gsap from 'gsap'
-
 export default {
-  name: 'AboutView',
+  name: 'ProductionView',
   components: {
-    AboutExpert,
-    AppPluses,
-    AboutProduct,
-    AppClient,
-    AboutBlog,
-    AppMore,
+    AppMethod,
+    AppBlog,
     AppContact
   },
   methods: {
@@ -85,4 +76,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.page__section {
+  background: url('../assets/img/method.jpg') no-repeat center / cover;
+}
+
+.section__title {
+  color: #fff;
+  width: 70%;
+}
+
+.section__link--item,
+.section__link {
+  color: #fff;
+}
+</style>
