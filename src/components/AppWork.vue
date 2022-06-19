@@ -15,7 +15,7 @@
             Безусловно, сплочённость команды профессионалов позволяет оценить
             значение форм воздействия.
           </p>
-          <router-link class="cta" :to="{ name: 'about' }"
+          <router-link class="cta" :to="{ name: 'contact' }"
             >Оставить заявку</router-link
           >
         </div>

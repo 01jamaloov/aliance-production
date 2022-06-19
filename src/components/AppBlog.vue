@@ -26,7 +26,7 @@
       >
         <div class="slider-navigation">
           <div>
-            <router-link class="cta" :to="{ name: 'about' }"
+            <router-link class="cta" :to="{ name: 'blog' }"
               >Весь блог</router-link
             >
           </div>

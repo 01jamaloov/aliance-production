@@ -5,7 +5,7 @@
         <img src="../assets/img/line.svg" alt="" />
         <h1 class="section__title">{{ $store.state.sectionTitle.title3 }}</h1>
       </div>
-      <div class="marks__wrapper">
+      <div class="marks__wrapper" :class="{ ptTrade: paddingTrademarks }">
         <router-link class="marks__item" :to="{ name: 'ag-tech' }">
           <div class="marks__image">
             <svg
@@ -169,7 +169,10 @@ export default {
   computed: {
     sectionShow() {
       return this.$route.name === 'home'
-    }
+    },
+		paddingTrademarks(){
+			return this.$route.name === 'trade-marks'
+		}
   }
 }
 </script>
@@ -179,15 +182,14 @@ export default {
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-		padding-top: 100px;
+
+		&.ptTrade{
+			padding-top: 100px;
+		}
 
     @media (max-width: 992px) {
       grid-template-columns: repeat(1, 1fr);
     }
-  }
-
-  .section {
-    margin-top: 0;
   }
 
   &__item {
