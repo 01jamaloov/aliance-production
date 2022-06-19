@@ -11,6 +11,7 @@
         </transition>
       </div>
     </transition>
+    <AppModal />
     <AppHero />
     <AppWork />
     <AppProduct />
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+import AppModal from '@/components/AppModal.vue'
 import AppHero from '@/components/AppHero.vue'
 import AppWork from '@/components/AppWork.vue'
 import AppProduct from '@/components/AppProduct.vue'
@@ -36,6 +38,7 @@ import gsap from 'gsap'
 export default {
   name: 'HomeView',
   components: {
+    AppModal,
     AppHero,
     AppWork,
     AppProduct,
